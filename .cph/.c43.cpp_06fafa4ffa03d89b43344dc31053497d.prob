@@ -1,0 +1,1 @@
+{"name":"Local: c43","url":"d:\\Programs()\\c43.cpp","tests":[{"id":1614426484076,"input":"3\n5\n1 2 3 4 5\n4\n2 0 1 9\n2\n2019 2020","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programs()\\c43.cpp","group":"local","local":true}

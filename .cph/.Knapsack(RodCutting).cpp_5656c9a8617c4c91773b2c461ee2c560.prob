@@ -1,0 +1,1 @@
+{"name":"Local: Knapsack(RodCutting)","url":"d:\\Programs()\\Knapsack(RodCutting).cpp","tests":[{"id":1609325052390,"input":"8 8\n1 2 3 4 5 6 7 8\n 1   5   8   9  10  17  17  20","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programs()\\Knapsack(RodCutting).cpp","group":"local","local":true}

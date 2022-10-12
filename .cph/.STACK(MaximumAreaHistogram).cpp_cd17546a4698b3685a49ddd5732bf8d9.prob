@@ -1,0 +1,1 @@
+{"name":"Local: STACK(MaximumAreaHistogram)","url":"d:\\Programs()\\STACK(MaximumAreaHistogram).cpp","tests":[{"id":1618734372566,"input":"6\n2 1 5 6 2 3","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programs()\\STACK(MaximumAreaHistogram).cpp","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: c33","url":"d:\\Programs()\\c33.cpp","tests":[{"id":1614018413801,"input":"4\n8 5 2 3","output":"164"},{"id":1614018435583,"input":"6\n1 1 1 2 2 2","output":"27"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programs()\\c33.cpp","group":"local","local":true}

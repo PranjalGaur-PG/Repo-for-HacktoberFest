@@ -1,0 +1,1 @@
+{"name":"Local: longestSubsequence","url":"d:\\Programs()\\longestSubsequence.cpp","tests":[{"id":1609600917419,"input":"AGGTAB\nGXTXAYB","output":"4"},{"id":1622198576444,"input":"geeks geseks","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programs()\\longestSubsequence.cpp","group":"local","local":true}

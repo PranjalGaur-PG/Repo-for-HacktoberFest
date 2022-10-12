@@ -1,0 +1,1 @@
+{"name":"Local: c57","url":"d:\\Programs()\\c57.cpp","tests":[{"id":1615120796373,"input":"3\n10\n-5\n-5","output":""},{"id":1615215736863,"input":"7\n-7\n-29\n0\n3\n24\n-29\n38","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programs()\\c57.cpp","group":"local","local":true}

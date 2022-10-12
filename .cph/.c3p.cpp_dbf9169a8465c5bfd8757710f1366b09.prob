@@ -1,0 +1,1 @@
+{"name":"Local: c3p","url":"d:\\Programs()\\c3p.cpp","tests":[{"id":1647018455725,"input":"2\nOO","output":""},{"id":1647018476451,"input":"5\nOEOEO","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programs()\\c3p.cpp","group":"local","local":true}

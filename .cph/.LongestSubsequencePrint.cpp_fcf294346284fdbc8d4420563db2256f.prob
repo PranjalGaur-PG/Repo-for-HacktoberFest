@@ -1,0 +1,1 @@
+{"name":"Local: LongestSubsequencePrint","url":"d:\\Programs()\\LongestSubsequencePrint.cpp","tests":[{"id":1609610702678,"input":"abcabcabc\nabc","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programs()\\LongestSubsequencePrint.cpp","group":"local","local":true}

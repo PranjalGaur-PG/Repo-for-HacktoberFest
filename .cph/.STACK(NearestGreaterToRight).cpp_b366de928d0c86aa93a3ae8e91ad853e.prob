@@ -1,0 +1,1 @@
+{"name":"Local: STACK(NearestGreaterToRight)","url":"d:\\Programs()\\STACK(NearestGreaterToRight).cpp","tests":[{"id":1620111239239,"input":"4\n11 13 21 3","output":""},{"id":1646647638319,"input":"5\n1 2 3 4 5","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programs()\\STACK(NearestGreaterToRight).cpp","group":"local","local":true}

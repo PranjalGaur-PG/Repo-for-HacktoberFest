@@ -1,0 +1,1 @@
+{"name":"Local: c66","url":"d:\\Programs()\\c66.cpp","tests":[{"id":1617512458979,"input":"abcabcbb","output":""},{"id":1617512466720,"input":"bbbbb","output":""},{"id":1617512488692,"input":"pwwkew","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programs()\\c66.cpp","group":"local","local":true}

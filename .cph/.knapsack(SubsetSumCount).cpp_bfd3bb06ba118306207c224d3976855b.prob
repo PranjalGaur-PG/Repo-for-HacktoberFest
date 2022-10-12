@@ -1,0 +1,1 @@
+{"name":"Local: knapsack(SubsetSumCount)","url":"d:\\Programs()\\knapsack(SubsetSumCount).cpp","tests":[{"id":1609128722801,"input":"6 10\n2 3 5 6 8 10","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programs()\\knapsack(SubsetSumCount).cpp","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: Knapsack(SubsetSumT-F)","url":"d:\\Programs()\\Knapsack(SubsetSumT-F).cpp","tests":[{"id":1609182250630,"input":"6 30\n3 34 4 12 5 2","output":""},{"id":1623758804335,"input":"4 6\n3 4 5 2","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programs()\\Knapsack(SubsetSumT-F).cpp","group":"local","local":true}

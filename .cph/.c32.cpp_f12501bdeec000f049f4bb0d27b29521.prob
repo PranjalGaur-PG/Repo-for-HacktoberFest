@@ -1,0 +1,1 @@
+{"name":"Local: c32","url":"d:\\Programs()\\c32.cpp","tests":[{"id":1613929421292,"input":"3\n3\n1 4 3\n1\n15\n2\n3 5","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programs()\\c32.cpp","group":"local","local":true}
