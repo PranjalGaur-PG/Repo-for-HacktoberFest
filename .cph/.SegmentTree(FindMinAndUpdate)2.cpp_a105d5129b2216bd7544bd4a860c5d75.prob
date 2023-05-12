@@ -1,0 +1,1 @@
+{"name":"Local: SegmentTree(FindMinAndUpdate)2","url":"d:\\Programs()\\SegmentTree(FindMinAndUpdate)2.cpp","tests":[{"id":1678043853870,"input":"5\n1 2 3 4 5\n3 \n1 0 5\n2 0 5\n1 0 5","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programs()\\SegmentTree(FindMinAndUpdate)2.cpp","group":"local","local":true}

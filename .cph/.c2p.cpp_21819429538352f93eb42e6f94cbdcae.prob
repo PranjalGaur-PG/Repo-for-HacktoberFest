@@ -1,1 +1,1 @@
-{"name":"Local: c2p","url":"d:\\Programs()\\c2p.cpp","tests":[{"id":1661944202671,"input":"5678\n4\n3","output":"JMPV"},{"id":1665075262157,"input":"342\n3\n4","output":"DHA"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programs()\\c2p.cpp","group":"local","local":true}
+{"name":"Local: c2p","url":"d:\\Programs()\\c2p.cpp","tests":[{"id":1680707602175,"input":"3\n7 2 3","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programs()\\c2p.cpp","group":"local","local":true}

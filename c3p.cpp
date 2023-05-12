@@ -1,88 +1,69 @@
 #include<bits/stdc++.h>
 using namespace std;
+#define endl "\n"
+#define IOS ios_base::sync_with_stdio(0); cin.tie(0);
+using namespace std;
 
-void final_solve(vector<int> temp) {
-    map<int,int> ump;
-        for(int i=0;i<temp.size();i++)
-        {
-            ump[temp[i]]++;
-        }
-        for(auto i : ump) {
-            cout<<i.first<<" ";
-            if(i.first==0)  {
-                cout<<0;
-            }
-            else
-            {
-                cout<<i.second;
-            }
-            break;
-    }
-}
-
-void solve1(int i, int cnt, string &str, int& co, int& ce) {
-    while(i<cnt)
-    {
-        if(str[i]=='O')
-        {
-            co++;
-        }
-        else{ce++;}
-
-        i++;
-    }
-}
-
-void solve() {
-    int cnt;
-    cin>>cnt;
-    string str;
-    cin>>str;
-
-    int co=0, ce=0;
-    int i = 0;
-    
-    solve1(i, cnt, str, co, ce);
-
-    if(co == cnt)
-    {
-        cout<<0<<" "<<0; 
-    }
-    else{
-
-        vector<int> temp;
-        int p=0;
-        int x=0;
-        while(x<co) {
-            if(str[x]=='E') {
-                p++;
-            }
-            x++;
-        }
-        temp.push_back(p);
-
-        for(int i=1;i<=cnt-co;i++)
-        {
-            if(str[i-1]=='E')
-            {
-                p--;
-            }
-
-            if(str[co+i-1]=='E')
-            {p++;}
-
-            temp.push_back(p);
-        }
-
-        final_solve(temp);
-
-    }
-
-}
+#define rep(i,a,b) for(i=a;i<b;i++)
+typedef long long ll;
+typedef unsigned long long ull;
+#define test(t) int t; cin>>t; while(t--)
 
 int main()
 {
-    solve();
+  IOS;
+  test(t) {
+    ll n,c, x;
+    cin>>n>>c;
+    vector<ll> a(n, 0);
+    vector<vector<ll>> arr;
+    for(ll i=0;i<n;i++) {
+        cin>>x;
+        vector<ll> t1, t2;
+        t1.push_back(x+1+i);
+        t1.push_back(i+1);
+        t1.push_back(1);
+        t2.push_back(x+n-i);
+        t2.push_back(i+1);
+        t2.push_back(2);
+        arr.push_back(t1);
+        arr.push_back(t2);
+    }
 
-    return 0;
+    sort(arr.begin(), arr.end());
+    set<int> st;
+    // for(int i=0;i<arr.size();i++) {
+    //     cout<<arr[i][0]<<" "<<arr[i][1]<<endl;
+    // }
+
+    ll s=0, i=0, z = 0;
+    vector<ll> vis(n+1, 0);
+    ll ans = 0;
+    while(z<arr.size()) {
+        if(arr[z][2]==1 && arr[z][0]<c) {
+            s += arr[z][0];
+            vis[arr[z][1]] = 1;
+            cout<<arr[z][1]<<" ";
+            ans++;
+            break;
+        }
+        z++;
+    }
+
+    while(i<arr.size()) {
+        if(!vis[arr[i][1]]) {
+            s += arr[i][0];
+            vis[arr[i][1]] = 1;
+            if(s>c) break;  
+            ans++;
+            cout<<arr[i][1]<<" ";
+        }
+        i++;
+    }
+
+    // cout<<endl;
+    cout<<ans<<endl;
+
+  }
+  return 0;
 }
