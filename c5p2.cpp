@@ -1,44 +1,36 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define endl "\n"
 #define IOS ios_base::sync_with_stdio(0); cin.tie(0);
 using namespace std;
- 
-#define rep(i,a,b) for(i=a;i<b;i++)
-typedef long long ll;
-typedef unsigned long long ull;
-#define test(t) int t; cin>>t; while(t--)
+
+void dfs(string s, int& ans, int ind, int cnt, int n, vector<bool>& vis) {
+    if(ind <0 || ind>=n || vis[ind]) return;
+
+    if(ind == n-1) {
+        ans = cnt;
+        return;
+    }
+
+    vis[ind] = true;
+
+    if(s[ind] == 'A') dfs(s, ans, ind+2, cnt+1, n, vis);
+    if(s[ind] == 'B') dfs(s, ans, ind-1, cnt+1, n, vis);
+}
+
+int fun(string s) {
+    int n = s.size();
+
+    vector<bool> vis(n, false);
+    int ans = -1;
+    dfs(s, ans, 0, 0, n, vis);
+    return ans;
+}
 
 int main()
 {
-    IOS;
-    double i = 0.0, j = 1.0;
-    string s;
-    cin>>s;
-    priority_queue<pair<double, int>, vector<pair<double, int>>, greater<pair<double, int>>> pq;
-    // for(int x=0;x<s.size();x++) {
-    //     double mid = (i+j)/2;
-    //     pq.push({mid, x});
-    //     if(s[x] == 'l') j = mid;
-    //     else i = mid;
-    // }
-
-
-    // while(pq.size()) {
-    //     cout<<pq.top().second+1<<endl;
-    //     pq.pop(); 
-    // }
-    int n=s.length();
- 
-   for(int i=0;i<n;i++)
-    {
-        if(s[i]=='r')
-        cout<<i+1<<'\n';
-    }
-    for(int i=n-1;i>=0;i--)
-    {
-        if(s[i]=='l')
-        cout<<i+1<<'\n';
-    }
-    return 0;
+  IOS;
+  string s;
+  cin>>s;
+  cout<<fun(s);
+  return 0;
 }

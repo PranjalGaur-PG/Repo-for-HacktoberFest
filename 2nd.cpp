@@ -5,31 +5,36 @@ class Solution {
   private:
     int n, m, q;
     map<string, int> nodeMap;
-    vector< set<int>> lockedDescendants; 
+    vector<set<int>> lockedDescendants; 
     vector<int> lockId;
+    vector<int> semaphore;
 
     int stringToNodeId(string s) { 
       return nodeMap[s]; 
     }
 
-    // Upgrade Functionality
-    bool upgrade(int node, int& id) {
-      if(lockedDescendants[node].size() == 0)
-        return false;
+    int getParent(int index) {         //
+      if(index == 0) return -1;
 
-      for(auto it : lockedDescendants[node]) {
-        if(lockId[it] != id) return false;
-      }
-      
-      set<int> st_temp = lockedDescendants[node];
-      for(auto it : st_temp) {
-        unlock(it, id);
-      }
-
-      lock(node, id);
-      return true;
+      return (index-1)/m;
     }
-    // End of Upgrade Functionality
+
+    void signal(int node) {         //
+      semaphore[node]++;
+    }
+
+    void wait(int node) {         //
+      while(semaphore[node] <= 0);
+
+      semaphore[node]--;
+    }
+
+    void parentSignal(int node, int parent) {         //
+      while(node != parent) {
+        signal(node);
+        node = getParent(node);
+      }
+    }
 
     // Lock Functionality
     bool checkParentForLock(int node) {
@@ -42,20 +47,47 @@ class Solution {
 
     void insertNodeInAncestors(int curNode, int& node) {
       lockedDescendants[curNode].insert(node);
+      signal(curNode, node);        //
 
       if(curNode != 0) insertNodeInAncestors((curNode-1)/m, node);
     }
 
     bool lock(int node, int& id) {
-      if(lockId[node] != -1) return false;
-      if(lockedDescendants[node].size() != 0) return false;
-
-      if(node != 0) {
-        if(!checkParentForLock((node-1)/m)) return false;
+      wait(node);       //
+      if(lockId[node] != -1) {
+        signal(node);
+        return false;
       }
+
+      int par = getParent(node);      //
+
+      while(par != -1) {          //
+        if(lockId[par] != -1) {         //
+          parentSignal(node, par);      //
+          signal(node);   //
+          return false;     //
+        }         //
+
+        wait(par);         //
+        par = getParent(par);         //
+      }
+
+      if(lockedDescendants[node].size() != 0) {
+        par = getParent(node);         //
+        parentSignal(node, par);         //
+
+        signal(node);
+        return false;
+      }
+
+      // if(node != 0) {
+      //   if(!checkParentForLock((node-1)/m)) return false;
+      // }
 
       lockId[node] = id;
       if(node != 0) insertNodeInAncestors((node-1)/m, node);
+
+      signal(node);         //
       return true;
     }
     // End of Lock Functionality
@@ -76,12 +108,32 @@ class Solution {
     }
     // End of Unlock Functionality
 
+    // Upgrade Functionality
+    bool upgrade(int node, int& id) {
+      if(lockedDescendants[node].size() == 0)
+        return false;
+
+      for(auto it : lockedDescendants[node]) {
+        if(lockId[it] != id) return false;
+      }
+      
+      set<int> st_temp = lockedDescendants[node];
+      for(auto it : st_temp) {
+        unlock(it, id);
+      }
+
+      lock(node, id);
+      return true;
+    }
+    // End of Upgrade Functionality
+
   public:
 
     Solution(int nodes, int mAry) {
       n = nodes, m = mAry;
       lockedDescendants.resize(n);
       lockId.resize(n, -1);
+      semaphore.resize(n, 1);
 
       for(int i=0;i<n;i++) {
         string s;
